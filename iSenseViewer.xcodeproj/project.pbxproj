@@ -13,6 +13,11 @@
 		C23EB5EF1CE9E2E800A459E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C23EB5ED1CE9E2E800A459E4 /* Main.storyboard */; };
 		C23EB5F11CE9E2E800A459E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C23EB5F01CE9E2E800A459E4 /* Assets.xcassets */; };
 		C23EB5F41CE9E2E800A459E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C23EB5F21CE9E2E800A459E4 /* LaunchScreen.storyboard */; };
+		C23EB5FC1CE9E35400A459E4 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C23EB5FB1CE9E35400A459E4 /* libz.tbd */; };
+		C23EB5FE1CE9E35800A459E4 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C23EB5FD1CE9E35800A459E4 /* Accelerate.framework */; };
+		C23EB6001CE9E35E00A459E4 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C23EB5FF1CE9E35E00A459E4 /* ExternalAccessory.framework */; };
+		C23EB6021CE9E36400A459E4 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C23EB6011CE9E36400A459E4 /* ImageIO.framework */; };
+		C23EB6041CE9E39F00A459E4 /* Structure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C23EB6031CE9E39F00A459E4 /* Structure.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		C23EB5F01CE9E2E800A459E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C23EB5F31CE9E2E800A459E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C23EB5F51CE9E2E800A459E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C23EB5FB1CE9E35400A459E4 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		C23EB5FD1CE9E35800A459E4 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		C23EB5FF1CE9E35E00A459E4 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		C23EB6011CE9E36400A459E4 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		C23EB6031CE9E39F00A459E4 /* Structure.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Structure.framework; path = iSenseViewer/Structure.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +43,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C23EB6041CE9E39F00A459E4 /* Structure.framework in Frameworks */,
+				C23EB6021CE9E36400A459E4 /* ImageIO.framework in Frameworks */,
+				C23EB6001CE9E35E00A459E4 /* ExternalAccessory.framework in Frameworks */,
+				C23EB5FE1CE9E35800A459E4 /* Accelerate.framework in Frameworks */,
+				C23EB5FC1CE9E35400A459E4 /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				C23EB5E31CE9E2E800A459E4 /* iSenseViewer */,
+				C23EB6051CE9E43A00A459E4 /* Frameworks */,
 				C23EB5E21CE9E2E800A459E4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,6 +93,18 @@
 				C23EB5E51CE9E2E800A459E4 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C23EB6051CE9E43A00A459E4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C23EB6031CE9E39F00A459E4 /* Structure.framework */,
+				C23EB6011CE9E36400A459E4 /* ImageIO.framework */,
+				C23EB5FF1CE9E35E00A459E4 /* ExternalAccessory.framework */,
+				C23EB5FD1CE9E35800A459E4 /* Accelerate.framework */,
+				C23EB5FB1CE9E35400A459E4 /* libz.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,8 +293,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iSenseViewer",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/iSenseViewer/Structure.framework/Headers",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = iSenseViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-lc++",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.codefluegel.iSenseViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -276,8 +317,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iSenseViewer",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/iSenseViewer/Structure.framework/Headers",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = iSenseViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-lc++",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.codefluegel.iSenseViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -302,6 +356,7 @@
 				C23EB5FA1CE9E2E800A459E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
